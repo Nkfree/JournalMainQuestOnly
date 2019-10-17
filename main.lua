@@ -17,6 +17,15 @@ Methods.IsReceivingMainQuestJournal = function(pid)
     return false
 end
 
+
+Methods.OnPlayerAuthentified = function(pid)
+
+	if Players[pid] ~= nil and Players[pid]:IsLoggedIn() then
+		Players[pid]:LoadJournal()
+	end
+end
+
+
 Methods.OnPlayerJournal = function(pid)
     if Players[pid] ~= nil and Players[pid]:IsLoggedIn() then
 		local playerName = Players[pid].name
@@ -38,6 +47,12 @@ customEventHooks.registerValidator("OnPlayerJournal", function(evenStatus, pid)
  Methods.OnPlayerJournal(pid)
  return customEventHooks.makeEventStatus(false,false)
  
+end)
+
+customEventHooks.registerHandler("OnPlayerAuthentified", function(evenStatus, pid)
+
+Methods.OnPlayerAuthentified(pid)
+
 end)
 
 return Methods
