@@ -7,6 +7,7 @@ It's a copy of [partial journal sharing](https://forum.openmw.org/viewtopic.php?
 ## Installation
 
 1. Download the ```main.lua``` and put it in */server/scripts/custom/JournalMainQuestOnly*
+2. Open ```config.lua``` (*/server/scripts/* directory) and change ```config.shareJournal``` to **false** in order for the script to work properly
 3. Open ```customScripts.lua``` and add this code on separate line: ```require("custom/JournalMainQuestOnly/main")```
 
 
