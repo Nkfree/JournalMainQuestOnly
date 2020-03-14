@@ -1,12 +1,7 @@
 local Methods = {}
 
 function Methods.IsConfigSettingValid()
-
-	if config.shareJournal == true then
-		return false
-	end
-	
-	return true
+	return config.shareJournal == false
 end
 
 function Methods.IsMainQuest(pid)
